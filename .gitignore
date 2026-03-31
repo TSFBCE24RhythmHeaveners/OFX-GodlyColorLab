@@ -1,0 +1,42 @@
+# Build directories
+build/
+bin/
+lib/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.ofx
+
+# IDE
+.vscode/
+.idea/
+*.xcodeproj/
+*.sln
+*.vcxproj
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Dependencies
+/include/ofxImageEffect.h
+/include/ofxCore.h
+/include/ofxDialog.h
+/include/ofxMemory.h
+/include/ofxMultiThread.h
+/include/ofxOpenGLRender.h
+/include/ofxParam.h
+/include/ofxParametricEffect.h
+/include/ofxPixelFormat.h
+/include/ofxProgress.h
+/include/ofxProperty.h
+/include/ofxSwitch.h
+/include/ofxTimeLine.h
