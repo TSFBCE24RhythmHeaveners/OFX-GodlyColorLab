@@ -29,7 +29,7 @@ EXPORT OfxExport OfxPlugin *OfxGetPlugin(int nth) {
     static OfxPlugin plugin = {
         /* pluginApi */          kOfxImageEffectPluginApi,
         /* apiVersion */         kOfxImageEffectPluginApiVersion,
-        /* pluginIdentifier */   "com.example.GodlyColorLabPlugin",
+        /* pluginIdentifier */   "com.salkocsis.GodlyColorLabPlugin",
         /* pluginVersionMajor */ 1,
         /* pluginVersionMinor */ 0,
         /* hostMinorVersion */   0,
