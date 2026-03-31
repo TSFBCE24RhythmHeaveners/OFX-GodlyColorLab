@@ -61,7 +61,7 @@ cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
 # Build
 cmake --build .
 
-# Output: bin/ColorCorrection.ofx
+# Output: bin/GodlyColorLab.ofx
 ```
 
 ## Building on Linux
@@ -77,7 +77,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 # Build
 cmake --build .
 
-# Output: bin/ColorCorrection.ofx.so
+# Output: bin/GodlyColorLab.ofx.so
 ```
 
 ## Troubleshooting
