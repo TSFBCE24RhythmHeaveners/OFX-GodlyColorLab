@@ -28,7 +28,7 @@ C:\Users\<username>\AppData\Roaming\DaVinci Resolve\Plugins\OpenFX
    - Create an `OpenFX` subdirectory if needed
 
 3. **Copy the plugin file**:
-   - Copy `bin/ GodlyColorLab.ofx` to the plugin directory
+   - Copy `bin/GodlyColorLab.ofx` to the plugin directory
 
 4. **Restart DaVinci Resolve**
 
@@ -43,7 +43,7 @@ C:\Users\<username>\AppData\Roaming\DaVinci Resolve\Plugins\OpenFX
 
 ### Plugin doesn't appear
 
-- Verify file is named exactly ` GodlyColorLab.ofx`
+- Verify file is named exactly `GodlyColorLab.ofx`
 - Check it's in the correct plugin directory for your OS
 - Ensure you restarted DaVinci Resolve
 - Check DaVinci Resolve log files for loading errors
