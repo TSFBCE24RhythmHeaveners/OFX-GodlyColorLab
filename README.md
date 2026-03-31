@@ -24,7 +24,7 @@ A professional color correction plugin built with OpenFX that supports **DaVinci
 ```bash
 # Clone the repository
 git clone https://github.com/TSFBCE24RhythmHeaveners/OFX-GodlyColorLab.git
-cd openfx-color-correction
+cd openfx-godlycolorlab
 
 # Create build directory
 mkdir build && cd build
@@ -34,5 +34,5 @@ cmake ..
 cmake --build . --config Release
 
 # Plugin output
-# DaVinci Resolve: ./bin/ColorCorrection.ofx
-# VEGAS Pro: ./bin/ColorCorrection.ofx
+# DaVinci Resolve: ./bin/GodlyColorLab.ofx
+# VEGAS Pro: ./bin/GodlyColorLab.ofx
