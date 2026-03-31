@@ -1,19 +1,19 @@
-#include " GodlyColorLabPlugin.h"
+#include "GodlyColorLabPlugin.h"
 #include <cstring>
 
- GodlyColorLabPlugin:: GodlyColorLabPlugin()
+GodlyColorLabPlugin::GodlyColorLabPlugin()
     : curveParam(nullptr), levelsParam(nullptr), hslParam(nullptr),
       colorBalanceParam(nullptr), gammaParam(nullptr), enableParam(nullptr) {
 }
 
- GodlyColorLabPlugin::~ GodlyColorLabPlugin() {
+GodlyColorLabPlugin::~GodlyColorLabPlugin() {
 }
 
-OfxStatus  GodlyColorLabPlugin::initialize() {
+OfxStatus GodlyColorLabPlugin::initialize() {
     return kOfxStatOK;
 }
 
-OfxStatus  GodlyColorLabPlugin::describe(OfxImageEffectHandle handle) {
+OfxStatus GodlyColorLabPlugin::describe(OfxImageEffectHandle handle) {
     OfxPropertySetHandle effectProps;
     gOFXHost->imageEffectSuite->getPropertySet(handle, &effectProps);
 
@@ -28,7 +28,7 @@ OfxStatus  GodlyColorLabPlugin::describe(OfxImageEffectHandle handle) {
     return kOfxStatOK;
 }
 
-OfxStatus  GodlyColorLabPlugin::describeInContext(OfxImageEffectHandle handle,
+OfxStatus GodlyColorLabPlugin::describeInContext(OfxImageEffectHandle handle,
                                                    OfxImageClipPreferenceArgs *args) {
     OfxPropertySetHandle effectProps;
     gOFXHost->imageEffectSuite->getPropertySet(handle, &effectProps);
@@ -46,7 +46,7 @@ OfxStatus  GodlyColorLabPlugin::describeInContext(OfxImageEffectHandle handle,
     return createParameters(handle);
 }
 
-OfxStatus  GodlyColorLabPlugin::createParameters(OfxImageEffectHandle handle) {
+OfxStatus GodlyColorLabPlugin::createParameters(OfxImageEffectHandle handle) {
     OfxParamSetHandle paramSet;
     gOFXHost->imageEffectSuite->getParamSet(handle, &paramSet);
 
@@ -91,7 +91,7 @@ OfxStatus  GodlyColorLabPlugin::createParameters(OfxImageEffectHandle handle) {
     return kOfxStatOK;
 }
 
-OfxStatus  GodlyColorLabPlugin::getRegionOfDefinition(OfxImageEffectHandle handle, OfxTime time,
+OfxStatus GodlyColorLabPlugin::getRegionOfDefinition(OfxImageEffectHandle handle, OfxTime time,
                                                        OfxRectD *rod) {
     OfxImageClipHandle sourceClip;
     gOFXHost->imageEffectSuite->clipGetHandle(handle, kOfxImageEffectSimpleSourceClipName, &sourceClip);
@@ -104,7 +104,7 @@ OfxStatus  GodlyColorLabPlugin::getRegionOfDefinition(OfxImageEffectHandle handl
     return kOfxStatOK;
 }
 
-OfxStatus  GodlyColorLabPlugin::render(OfxImageEffectHandle handle, OfxRenderArguments *args) {
+OfxStatus GodlyColorLabPlugin::render(OfxImageEffectHandle handle, OfxRenderArguments *args) {
     OfxPropertySetHandle outProps;
     gOFXHost->imageEffectSuite->getPropertySet(handle, &outProps);
 
@@ -142,7 +142,7 @@ OfxStatus  GodlyColorLabPlugin::render(OfxImageEffectHandle handle, OfxRenderArg
     return kOfxStatOK;
 }
 
-void  GodlyColorLabPlugin::applyColorCorrection(float *pixelData, int width, int height,
+void GodlyColorLabPlugin::applyColorCorrection(float *pixelData, int width, int height,
                                                   int pixelComponentCount) {
     int pixelCount = width * height;
 
@@ -176,7 +176,7 @@ void  GodlyColorLabPlugin::applyColorCorrection(float *pixelData, int width, int
     }
 }
 
-void  GodlyColorLabPlugin::applyCurves(float &r, float &g, float &b) {
+void GodlyColorLabPlugin::applyCurves(float &r, float &g, float &b) {
     // Placeholder: Apply curve adjustment
     // In a full implementation, this would use the curve parameter data
     r = r;
@@ -184,21 +184,21 @@ void  GodlyColorLabPlugin::applyCurves(float &r, float &g, float &b) {
     b = b;
 }
 
-void  GodlyColorLabPlugin::applyLevels(float &r, float &g, float &b) {
+void GodlyColorLabPlugin::applyLevels(float &r, float &g, float &b) {
     // Placeholder: Apply levels adjustment
     // In a full implementation, this would adjust black/white/mid-tones
 }
 
-void  GodlyColorLabPlugin::applyHSL(float &r, float &g, float &b) {
+void GodlyColorLabPlugin::applyHSL(float &r, float &g, float &b) {
     // Convert RGB to HSL, adjust saturation, convert back
     // Placeholder implementation
 }
 
-void  GodlyColorLabPlugin::applyColorBalance(float &r, float &g, float &b) {
+void GodlyColorLabPlugin::applyColorBalance(float &r, float &g, float &b) {
     // Placeholder: Apply color balance adjustments
 }
 
-void  GodlyColorLabPlugin::applyGamma(float &r, float &g, float &b) {
+void GodlyColorLabPlugin::applyGamma(float &r, float &g, float &b) {
     // Apply gamma correction
     // gamma = 1.0 / gamma_value (inverse)
     float gamma = 1.0f / 2.2f; // Standard sRGB gamma
