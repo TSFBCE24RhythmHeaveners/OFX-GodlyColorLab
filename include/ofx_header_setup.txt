@@ -1,0 +1,28 @@
+OpenFX SDK Header Setup Instructions
+
+The following header files need to be downloaded from:
+https://github.com/ofxa/openfx/tree/master/include
+
+Required headers:
+- ofxImageEffect.h
+- ofxCore.h
+- ofxDialog.h
+- ofxMemory.h
+- ofxMultiThread.h
+- ofxOpenGLRender.h
+- ofxParam.h
+- ofxParametricEffect.h
+- ofxPixelFormat.h
+- ofxProgress.h
+- ofxProperty.h
+- ofxSwitch.h
+- ofxTimeLine.h
+
+Steps:
+1. Download all files from the OpenFX include directory
+2. Place them in this folder (include/)
+3. The CMakeLists.txt will reference them from here
+
+Alternative:
+Set OFX_PATH environment variable to point to your OpenFX SDK directory.
+CMake will then find headers automatically.
