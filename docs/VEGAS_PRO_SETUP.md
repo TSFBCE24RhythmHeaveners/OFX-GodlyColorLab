@@ -11,7 +11,7 @@ C:\Program Files\VEGAS\VEGAS Pro <version>\OFX Video Plug-Ins
 
 ### Windows (32-bit)
 ```
-C:\Program Files (x86)\MAGIX\VEGAS Pro <version>\Script Types\OpenFX
+C:\Program Files (x86)\VEGAS\VEGAS Pro <version>\OFX Video Plug-Ins
 ```
 
 ## Installation Steps
