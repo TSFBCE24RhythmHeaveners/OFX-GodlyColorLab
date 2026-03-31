@@ -1,4 +1,4 @@
-# Building the OpenFX Color Correction Plugin
+# Building the Godly Color Lab Plugin
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ cmake .. -G "Visual Studio 17 2022" -A x64
 # Build in Release mode
 cmake --build . --config Release
 
-# Output: bin/ColorCorrection.ofx
+# Output: bin/GodlyColorLab.ofx
 ```
 
 ## Building on macOS
