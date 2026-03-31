@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(ColorCorrectionPlugin VERSION 1.0.0 LANGUAGES CXX)
+project(GodlyColorLabPluginPlugin VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -27,36 +27,36 @@ endif()
 # Plugin source files
 set(PLUGIN_SOURCES
     src/PluginMain.cpp
-    src/ColorCorrectionPlugin.cpp
+    src/GodlyColorLabPluginPlugin.cpp
 )
 
 # Create the plugin library
-add_library(ColorCorrection SHARED ${PLUGIN_SOURCES})
+add_library(GodlyColorLabPlugin SHARED ${PLUGIN_SOURCES})
 
 # Include directories
-target_include_directories(ColorCorrection PRIVATE
+target_include_directories(GodlyColorLabPlugin PRIVATE
     ${OFX_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 # Platform-specific settings
 if(WIN32)
-    set_target_properties(ColorCorrection PROPERTIES SUFFIX ".ofx")
-    target_compile_definitions(ColorCorrection PRIVATE WINDOWS)
+    set_target_properties(GodlyColorLabPlugin PROPERTIES SUFFIX ".ofx")
+    target_compile_definitions(GodlyColorLabPlugin PRIVATE WINDOWS)
 elseif(APPLE)
-    set_target_properties(ColorCorrection PROPERTIES
+    set_target_properties(GodlyColorLabPlugin PROPERTIES
         SUFFIX ".ofx"
         BUNDLE ON
     )
-    target_compile_definitions(ColorCorrection PRIVATE MACOS)
+    target_compile_definitions(GodlyColorLabPlugin PRIVATE MACOS)
 else()
-    set_target_properties(ColorCorrection PROPERTIES SUFFIX ".ofx.so")
-    target_compile_definitions(ColorCorrection PRIVATE LINUX)
+    set_target_properties(GodlyColorLabPlugin PROPERTIES SUFFIX ".ofx.so")
+    target_compile_definitions(GodlyColorLabPlugin PRIVATE LINUX)
 endif()
 
 # Compiler flags
 if(MSVC)
-    target_compile_options(ColorCorrection PRIVATE /W4 /O2)
+    target_compile_options(GodlyColorLabPlugin PRIVATE /W4 /O2)
 else()
-    target_compile_options(ColorCorrection PRIVATE -Wall -Wextra -O2)
+    target_compile_options(GodlyColorLabPlugin PRIVATE -Wall -Wextra -O2)
 endif()
