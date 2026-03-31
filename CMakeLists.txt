@@ -31,32 +31,32 @@ set(PLUGIN_SOURCES
 )
 
 # Create the plugin library
-add_library(GodlyColorLabPlugin SHARED ${PLUGIN_SOURCES})
+add_library(GodlyColorLab SHARED ${PLUGIN_SOURCES})
 
 # Include directories
-target_include_directories(GodlyColorLabPlugin PRIVATE
+target_include_directories(GodlyColorLab PRIVATE
     ${OFX_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 # Platform-specific settings
 if(WIN32)
-    set_target_properties(GodlyColorLabPlugin PROPERTIES SUFFIX ".ofx")
-    target_compile_definitions(GodlyColorLabPlugin PRIVATE WINDOWS)
+    set_target_properties(GodlyColorLab PROPERTIES SUFFIX ".ofx")
+    target_compile_definitions(GodlyColorLab PRIVATE WINDOWS)
 elseif(APPLE)
-    set_target_properties(GodlyColorLabPlugin PROPERTIES
+    set_target_properties(GodlyColorLab PROPERTIES
         SUFFIX ".ofx"
         BUNDLE ON
     )
-    target_compile_definitions(GodlyColorLabPlugin PRIVATE MACOS)
+    target_compile_definitions(GodlyColorLab PRIVATE MACOS)
 else()
-    set_target_properties(GodlyColorLabPlugin PROPERTIES SUFFIX ".ofx.so")
-    target_compile_definitions(GodlyColorLabPlugin PRIVATE LINUX)
+    set_target_properties(GodlyColorLab PROPERTIES SUFFIX ".ofx.so")
+    target_compile_definitions(GodlyColorLab PRIVATE LINUX)
 endif()
 
 # Compiler flags
 if(MSVC)
-    target_compile_options(GodlyColorLabPlugin PRIVATE /W4 /O2)
+    target_compile_options(GodlyColorLab PRIVATE /W4 /O2)
 else()
-    target_compile_options(GodlyColorLabPlugin PRIVATE -Wall -Wextra -O2)
+    target_compile_options(GodlyColorLab PRIVATE -Wall -Wextra -O2)
 endif()
